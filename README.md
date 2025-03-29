@@ -1,10 +1,10 @@
 # 📊 Finance Bot
 
-This is a finance bot that provides control over your expnses.
+This is a finance bot that provides control over your expenses.
 
 ## 🚀 Launch
 
-Firstly, create .env file in the bot directory and set the following values, replacing the placeholders with your actual values:
+Firstly, create an .env file in the bot directory and set the following values, replacing the placeholders with your actual values:
 ```
 TOKEN = "your_token"
 
@@ -33,4 +33,4 @@ docker-compose up --build
 
 ## 📩 Feedback
 
-If you have any suggestions or find any issues, feel free to contact me.
+Feel free to contact me if you have any suggestions or issues.
