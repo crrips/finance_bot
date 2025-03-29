@@ -1,4 +1,4 @@
-# Finance Bot
+# 📊 Finance Bot
 
 This is a finance bot that provides control over your expnses.
 
