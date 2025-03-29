@@ -1,0 +1,40 @@
+services:
+  backend:
+    build: ./backend
+    container_name: finance_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - db
+
+  bot:
+    build: ./bot
+    container_name: finance_bot
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./bot:/app
+    env_file:
+      - ./bot/.env
+    depends_on:
+      - db
+      - backend
+
+  db:
+    image: postgres
+    container_name: finance_db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: finance_db
+      DATABASE_URL: postgresql+psycopg2://user:password@db:5432/finance_db
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
